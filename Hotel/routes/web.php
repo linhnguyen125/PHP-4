@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Auth\AuthServiceProvider;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,15 @@ Route::get('/dashboard', 'DashboardController@index');
 
 //  ============== CUSTOMERS ===========================
 Route::get('/admin/customers/index', 'CustomerController@index')->name('customer.index');
+Route::get('/admin/customers/detail/{id}', 'CustomerController@detail')->name('customer.detail');
+Route::get('/admin/customers/delete/{id}', 'CustomerController@delete')->name('customer.delete');
+
+//  ============== STAFF ===========================
+Route::get('/admin/staff/index', 'StaffController@index')->name('staff.index');
+Route::get('/admin/staff/detail/{id}', 'StaffController@detail')->name('staff.detail');
+Route::get('/admin/staff/delete/{id}', 'StaffController@delete')->name('staff.delete');
+Route::get('/admin/staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
+Route::post('/admin/staff/store/{id}', 'StaffController@store')->name('staff.store');
 
 Auth::routes();
 

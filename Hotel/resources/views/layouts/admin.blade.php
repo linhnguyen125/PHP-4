@@ -48,19 +48,25 @@
                                 <li class="nk-menu-item">
                                     <a href="html/ecommerce/orders.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-bag-fill"></em></span>
-                                        <span class="nk-menu-text">Orders</span>
+                                        <span class="nk-menu-text">Hóa đơn</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="html/ecommerce/products.html" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-package-fill"></em></span>
-                                        <span class="nk-menu-text">Products</span>
+                                        <span class="nk-menu-icon"><em class="icon ni ni-home-fill"></em></em></span>
+                                        <span class="nk-menu-text">Phòng</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{route('customer.index')}}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
-                                        <span class="nk-menu-text">Customers</span>
+                                        <span class="nk-menu-text">Người dùng</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+                                <li class="nk-menu-item">
+                                    <a href="{{route('staff.index')}}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-user-check-fill"></em></em></em></span>
+                                        <span class="nk-menu-text">Nhân viên</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                             </ul><!-- .nk-menu -->

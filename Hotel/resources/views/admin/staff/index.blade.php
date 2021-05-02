@@ -19,7 +19,7 @@
                     <div class="nk-block-head nk-block-head-sm">
                         <div class="nk-block-between">
                             <div class="nk-block-head-content">
-                                <h3 class="nk-block-title page-title">Người dùng</h3>
+                                <h3 class="nk-block-title page-title">Nhân viên</h3>
                             </div><!-- .nk-block-head-content -->
                             <div class="nk-block-head-content">
                                 <div class="toggle-wrap nk-block-tools-toggle">
@@ -76,6 +76,7 @@
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <ul class="link-list-opt no-bdr">
                                                         <li><a href="#"><em class="icon ni ni-trash"></em><span>Xóa tài khoản</span></a></li>
+                                                        
                                                     </ul>
                                                 </div>
                                             </div>
@@ -83,7 +84,7 @@
                                     </ul>
                                 </div>
                             </div><!-- .nk-tb-item -->
-                            @foreach ($users as $user)
+                            @foreach ($staffs as $staff)
 
                             <div class="nk-tb-item">
                                 <div class="nk-tb-col nk-tb-col-check">
@@ -93,23 +94,23 @@
                                     </div>
                                 </div>
                                 <div class="nk-tb-col">
-                                    <a href="{{route('customer.detail', $user->id)}}">
+                                    <a href="{{route('staff.detail', $staff->id)}}">
                                         <div class="user-card">
                                             <div class="user-avatar bg-primary">
                                                 <span>AB</span>
                                             </div>
                                             <div class="user-info">
-                                                <span class="tb-lead">{{$user->name}} <span class="dot dot-success d-md-none ml-1"></span></span>
-                                                <span>{{$user->email}}</span>
+                                                <span class="tb-lead">{{$staff->name}} <span class="dot dot-success d-md-none ml-1"></span></span>
+                                                <span>{{$staff->email}}</span>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="nk-tb-col tb-col-md">
-                                    <span>{{$user->phone}}</span>
+                                    <span>{{$staff->phone}}</span>
                                 </div>
                                 <div class="nk-tb-col tb-col-lg">
-                                    <span>{{$user->address}}</span>
+                                    <span>{{$staff->address}}</span>
                                 </div>
                                 <div class="nk-tb-col nk-tb-col-tools">
                                     <ul class="nk-tb-actions gx-1">
@@ -128,8 +129,9 @@
                                                 <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <ul class="link-list-opt no-bdr">
-                                                        <li><a href="{{route('customer.detail', $user->id)}}"><em class="icon ni ni-eye"></em><span>Xem chi tiết</span></a></li>
-                                                        <li><a href="{{route('customer.delete', $user->id)}}"><em class="icon ni ni-trash"></em><span>Xóa tài khoản</span></a></li>
+                                                        <li><a href="{{route('staff.detail', $staff->id)}}"><em class="icon ni ni-eye"></em><span>Xem chi tiết</span></a></li>
+                                                        <li><a href="{{route('staff.delete', $staff->id)}}"><em class="icon ni ni-trash"></em><span>Xóa tài khoản</span></a></li>
+                                                        <li><a href="{{route('staff.edit', $staff->id)}}"><em class="icon ni ni-edit"></em><span>Chỉnh sửa</span></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -145,7 +147,7 @@
                             <div class="card-inner">
                                 <div class="nk-block-between-md g-3">
                                     <div class="g">
-                                        {{ $users->onEachSide(5)->links() }}
+                                        {{ $staffs->onEachSide(5)->links() }}
                                     </div>
                                 </div><!-- .nk-block-between -->
                             </div>
