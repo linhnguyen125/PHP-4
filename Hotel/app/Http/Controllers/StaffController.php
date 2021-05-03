@@ -40,20 +40,15 @@ class StaffController extends Controller
 
     public function store(Request $request, $id){
         
-        $input_date = explode('/', $request->input('date_of_birth'));
-        $date_of_birth = $input_date[2] . '-' . $input_date[0] . '-' . $input_date[1];
-        $name =  $request->input('name');
-        $phone = $request->input('phone');
-        $address = $request->input('address');
-        $data = [$name, $phone, $address, $date_of_birth];
-        // $data = $request->all();
-        // return $data;
+        // $input_date = explode('/', $request->input('date_of_birth'));
+        // $date_of_birth = $input_date[2] . '-' . $input_date[0] . '-' . $input_date[1];
+        $data = $request->all();
         $request->validate(
             [
                 'name' => ['required','min:3', 'max:255'],
                 'phone' => ['required', 'regex:/^(0|\+84)(\s|\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\d)(\s|\.)?(\d{3})(\s|\.)?(\d{3})$/'],
                 'address' => ['required'],
-                'date_of_birth' => ['required'],
+                // 'date_of_birth' => ['required'],
             ],
             [
                 'required' => ':attribute không được để trống',
@@ -64,7 +59,7 @@ class StaffController extends Controller
                 'name' => 'Tên nhân viên',
                 'phone' => 'Số điện thoại',
                 'address' => 'Địa chỉ',
-                'date_of_birth' => 'Ngày sinh'
+                // 'date_of_birth' => 'Ngày sinh'
             ]
         );
 
@@ -74,5 +69,9 @@ class StaffController extends Controller
         }else{
             return back()->with('error', 'Cập nhật thất bại');
         }
+    }
+
+    public function showFormCreate(){
+        return view('admin.staff.create');
     }
 }

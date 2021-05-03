@@ -19,12 +19,12 @@
                     <div class="nk-block-head nk-block-head-sm">
                         <div class="nk-block-between">
                             <div class="nk-block-head-content">
-                                <h3 class="nk-block-title page-title">Cập nhật thông tin</h3>
+                                <h3 class="nk-block-title page-title">Thêm mới</h3>
                             </div><!-- .nk-block-head-content -->
                         </div><!-- .nk-block-between -->
                     </div><!-- .nk-block-head -->
                     
-                    <form action="{{route('staff.store', $staff->id)}}" method="POST">
+                    <form action="{{route('customer.store')}}" method="POST">
                         @csrf
                         <div class="card card-preview">
                             <div class="card-inner">
@@ -35,9 +35,45 @@
                                             <div class="form-group">
                                                 <div class="form-control-wrap">
                                                     <input type="text" class="form-control form-control-lg form-control-outlined" name="name" id="name" value="{{old('name')}}">
-                                                    <label class="form-label-outlined" for="name">Tên nhân viên</label>
+                                                    <label class="form-label-outlined" for="name">Họ và tên</label>
                                                 </div>
                                                 @error('name')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="form-group">
+                                                <div class="form-control-wrap">
+                                                    <input type="text" class="form-control form-control-lg form-control-outlined" name="email" id="email" value="{{old('email')}}">
+                                                    <label class="form-label-outlined" for="email">Email</label>
+                                                </div>
+                                                @error('name')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="form-group">
+                                                <div class="form-control-wrap">
+                                                    <input type="password" class="form-control form-control-lg form-control-outlined" name="password" id="password" value="{{old('password')}}">
+                                                    <label class="form-label-outlined" for="password">Mật khẩu</label>
+                                                </div>
+                                                @error('password')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="form-group">
+                                                <div class="form-control-wrap">
+                                                    <input type="password" class="form-control form-control-lg form-control-outlined" name="password_confirmation" id="confirmPassword" value="{{old('confirmPassword')}}">
+                                                    <label class="form-label-outlined" for="confirmPassword">Xác nhận mật khẩu</label>
+                                                </div>
+                                                @error('password')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
@@ -86,7 +122,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-primary"></em><span>Cập nhật</span></button>
+                                            <button type="submit" class="btn btn-primary"></em><span>Thêm mới</span></button>
                                         </div>
                                     </div>
                                     

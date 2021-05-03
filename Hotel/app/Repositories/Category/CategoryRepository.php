@@ -1,14 +1,14 @@
 <?php
-namespace App\Repositories\Staff;
+namespace App\Repositories\Category;
 
 use App\Repositories\BaseRepository;
 
-class StaffRepository extends BaseRepository implements StaffRepositoryInterface
+class CategoryRepository extends BaseRepository implements CategoryRepositoryInterface
 {
     //lấy model tương ứng
     public function getModel()
     {
-        return \App\Models\Staff::class;
+        return \App\Models\Category::class;
     }
 
     public function getAll(){

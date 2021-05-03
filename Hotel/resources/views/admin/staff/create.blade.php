@@ -24,7 +24,7 @@
                         </div><!-- .nk-block-between -->
                     </div><!-- .nk-block-head -->
                     
-                    <form action="{{route('staff.store', $staff->id)}}" method="POST">
+                    <form action="{{route('staff.create')}}" method="POST">
                         @csrf
                         <div class="card card-preview">
                             <div class="card-inner">

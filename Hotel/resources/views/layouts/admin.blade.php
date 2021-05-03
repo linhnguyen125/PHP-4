@@ -52,6 +52,12 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
+                                    <a href="{{route('category.index')}}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-package-fill"></em></em></span>
+                                        <span class="nk-menu-text">Danh mục</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+                                <li class="nk-menu-item">
                                     <a href="html/ecommerce/products.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-home-fill"></em></em></span>
                                         <span class="nk-menu-text">Phòng</span>
@@ -63,12 +69,12 @@
                                         <span class="nk-menu-text">Người dùng</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
+                                {{-- <li class="nk-menu-item">
                                     <a href="{{route('staff.index')}}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-user-check-fill"></em></em></em></span>
                                         <span class="nk-menu-text">Nhân viên</span>
                                     </a>
-                                </li><!-- .nk-menu-item -->
+                                </li><!-- .nk-menu-item --> --}}
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->
                     </div><!-- .nk-sidebar-content -->
@@ -290,7 +296,7 @@
                                                 </div>
                                                 <div class="user-info d-none d-xl-block">
                                                     <div class="user-status user-status-active">Administator</div>
-                                                    <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                                    <div class="user-name dropdown-indicator">{{Auth::user()->name}}</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -301,8 +307,8 @@
                                                         <span>AB</span>
                                                     </div>
                                                     <div class="user-info">
-                                                        <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                        <span class="sub-text">info@softnio.com</span>
+                                                        <span class="lead-text">{{Auth::user()->name}}</span>
+                                                        <span class="sub-text">{{Auth::user()->email}}</span>
                                                     </div>
                                                 </div>
                                             </div>

@@ -1,7 +1,7 @@
 <?php
-namespace App\Repositories\Staff;
+namespace App\Repositories\Category;
 
-interface StaffRepositoryInterface
+interface CategoryRepositoryInterface
 {
     public function getAll();
     public function find($id);

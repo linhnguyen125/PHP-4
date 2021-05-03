@@ -27,13 +27,17 @@ Route::get('/dashboard', 'DashboardController@index');
 Route::get('/admin/customers/index', 'CustomerController@index')->name('customer.index');
 Route::get('/admin/customers/detail/{id}', 'CustomerController@detail')->name('customer.detail');
 Route::get('/admin/customers/delete/{id}', 'CustomerController@delete')->name('customer.delete');
+Route::get('/admin/customers/edit/{id}', 'CustomerController@edit')->name('customer.edit');
+Route::post('/admin/customers/update/{id}', 'CustomerController@update')->name('customer.update');
+Route::get('/admin/customers/create', 'CustomerController@create')->name('customer.create');
+Route::post('/admin/customers/store', 'CustomerController@store')->name('customer.store');
 
-//  ============== STAFF ===========================
-Route::get('/admin/staff/index', 'StaffController@index')->name('staff.index');
-Route::get('/admin/staff/detail/{id}', 'StaffController@detail')->name('staff.detail');
-Route::get('/admin/staff/delete/{id}', 'StaffController@delete')->name('staff.delete');
-Route::get('/admin/staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
-Route::post('/admin/staff/store/{id}', 'StaffController@store')->name('staff.store');
+
+//  ============== CATEGORY ===========================
+Route::get('/admin/categories/index', 'CategoryController@index')->name('category.index');
+Route::get('/admin/categories/delete/{id}', 'CategoryController@delete')->name('category.delete');
+Route::get('/admin/categories/edit/{id}', 'CategoryController@edit')->name('category.edit');
+
 
 Auth::routes();
 

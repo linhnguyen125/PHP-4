@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Staff extends Model
+class Category extends Model
 {
     //
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'address', 'date_of_birth',
+        'name', 'description',
     ];
 }
