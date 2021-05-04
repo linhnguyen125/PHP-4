@@ -35,8 +35,11 @@ Route::post('/admin/customers/store', 'CustomerController@store')->name('custome
 
 //  ============== CATEGORY ===========================
 Route::get('/admin/categories/index', 'CategoryController@index')->name('category.index');
+Route::get('/admin/categories/create', 'CategoryController@create')->name('category.create');
+Route::post('/admin/categories/store', 'CategoryController@store')->name('category.store');
 Route::get('/admin/categories/delete/{id}', 'CategoryController@delete')->name('category.delete');
 Route::get('/admin/categories/edit/{id}', 'CategoryController@edit')->name('category.edit');
+Route::post('/admin/categories/update/{id}', 'CategoryController@update')->name('category.update');
 
 
 Auth::routes();

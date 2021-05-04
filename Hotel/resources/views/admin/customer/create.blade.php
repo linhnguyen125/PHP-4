@@ -49,7 +49,7 @@
                                                     <input type="text" class="form-control form-control-lg form-control-outlined" name="email" id="email" value="{{old('email')}}">
                                                     <label class="form-label-outlined" for="email">Email</label>
                                                 </div>
-                                                @error('name')
+                                                @error('email')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>

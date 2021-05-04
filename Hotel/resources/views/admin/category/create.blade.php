@@ -19,12 +19,12 @@
                     <div class="nk-block-head nk-block-head-sm">
                         <div class="nk-block-between">
                             <div class="nk-block-head-content">
-                                <h3 class="nk-block-title page-title">Cập nhật thông tin</h3>
+                                <h3 class="nk-block-title page-title">Thêm mới</h3>
                             </div><!-- .nk-block-head-content -->
                         </div><!-- .nk-block-between -->
                     </div><!-- .nk-block-head -->
                     
-                    <form action="{{route('staff.create')}}" method="POST">
+                    <form action="{{route('category.store')}}" method="POST">
                         @csrf
                         <div class="card card-preview">
                             <div class="card-inner">
@@ -35,7 +35,7 @@
                                             <div class="form-group">
                                                 <div class="form-control-wrap">
                                                     <input type="text" class="form-control form-control-lg form-control-outlined" name="name" id="name" value="{{old('name')}}">
-                                                    <label class="form-label-outlined" for="name">Tên nhân viên</label>
+                                                    <label class="form-label-outlined" for="name">Tên danh mục</label>
                                                 </div>
                                                 @error('name')
                                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -46,47 +46,17 @@
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="form-group">
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg form-control-outlined" name="phone" id="phone" value="{{old('phone')}}">
-                                                    <label class="form-label-outlined" for="phone">Số điện thoại</label>
+                                                    <input type="text" class="form-control form-control-lg form-control-outlined" name="description" id="description" value="{{old('description')}}">
+                                                    <label class="form-label-outlined" for="description">Mô tả</label>
                                                 </div>
-                                                @error('phone')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                        
-
-                                        <div class="col-lg-6 col-sm-6">
-                                            <div class="form-group">
-                                                <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg form-control-outlined" name="address" id="address" value="{{old('address')}}">
-                                                    <label class="form-label-outlined" for="address">Địa chỉ</label>
-                                                </div>
-                                                @error('address')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6 col-sm-6">
-                                            <div class="form-group">
-                                                <div class="form-control-wrap">
-                                                    <div class="form-icon form-icon-right">
-                                                        <em class="icon ni ni-calendar-alt"></em>
-                                                    </div>
-                                                    <input type="text" class="form-control form-control-lg form-control-outlined date-picker" 
-                                                    name="date_of_birth" id="outlined-date-picker" value="{{old('date_of_birth')}}"
-                                                    data-date-format="yyyy-mm-dd">
-                                                    <label class="form-label-outlined" for="outlined-date-picker">Ngày sinh</label>
-                                                </div>
-                                                @error('date_of_birth')
+                                                @error('description')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-primary"></em><span>Cập nhật</span></button>
+                                            <button type="submit" class="btn btn-primary"></em><span>Thêm mới</span></button>
                                         </div>
                                     </div>
                                     
@@ -94,8 +64,6 @@
                             </div>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>

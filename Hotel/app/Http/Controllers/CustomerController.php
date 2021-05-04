@@ -100,7 +100,7 @@ class CustomerController extends Controller
                 'date_of_birth' => 'Ngày sinh',
                 'password'  => 'Mật khẩu',
             ]
-            );
+        );
 
         $name =  $request->input('name');
         $email =  $request->input('email');

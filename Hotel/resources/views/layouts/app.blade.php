@@ -17,10 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     {{-- Bootstrap css --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-
-    {{-- Script --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -71,7 +68,7 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                            </li> 
                         @endguest
                     </ul>
                 </div>
@@ -82,5 +79,9 @@
             @yield('content')
         </main>
     </div>
+
+    {{-- Script --}}
+    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 </body>
 </html>

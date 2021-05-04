@@ -19,7 +19,7 @@
                     <div class="nk-block-head nk-block-head-sm">
                         <div class="nk-block-between">
                             <div class="nk-block-head-content">
-                                <h3 class="nk-block-title page-title">Người dùng</h3>
+                                <h3 class="nk-block-title page-title">Danh mục</h3>
                             </div><!-- .nk-block-head-content -->
                             <div class="nk-block-head-content">
                                 <div class="toggle-wrap nk-block-tools-toggle">
@@ -47,8 +47,8 @@
                                                 </div>
                                             </li>
                                             <li class="nk-block-tools-opt">
-                                                <a href="{{route('customer.create')}}" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
-                                                <a href="{{route('customer.create')}}" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add</span></a>
+                                                <a href="{{route('category.create')}}" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+                                                <a href="{{route('category.create')}}" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add</span></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -74,7 +74,7 @@
                                                 <a href="#" class="dropdown-toggle btn btn-icon btn-trigger mr-n1" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <ul class="link-list-opt no-bdr">
-                                                        <li><a href="#"><em class="icon ni ni-trash"></em><span>Xóa tài khoản</span></a></li>
+                                                        <li><a href="#"><em class="icon ni ni-trash"></em><span>Xóa danh mục</span></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -110,8 +110,8 @@
                                                 <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <ul class="link-list-opt no-bdr">
-                                                        <li><a href="{{route('customer.delete', $cat->id)}}"><em class="icon ni ni-trash"></em><span>Xóa danh mục</span></a></li>
-                                                        <li><a href="{{route('customer.edit', $cat->id)}}"><em class="icon ni ni-edit-alt"></em><span>Chỉnh sửa</span></a></li>
+                                                        <li><a href="{{route('category.delete', $cat->id)}}"><em class="icon ni ni-trash"></em><span>Xóa danh mục</span></a></li>
+                                                        <li><a href="{{route('category.edit', $cat->id)}}"><em class="icon ni ni-edit-alt"></em><span>Chỉnh sửa</span></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
