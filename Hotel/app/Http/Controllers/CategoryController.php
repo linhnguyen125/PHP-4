@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\Category\CategoryRepositoryInterface;
+use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
 {
