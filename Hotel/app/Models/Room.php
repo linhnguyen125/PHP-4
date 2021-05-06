@@ -11,7 +11,7 @@ class Room extends Model
     use Sluggable;
     
     protected $fillable = [
-        'room_code', 'cat_id', 'status', 'detail', 'slug',
+        'room_code', 'cat_id', 'status', 'detail', 'slug','image', 'price',
     ];
 
     public function category(){

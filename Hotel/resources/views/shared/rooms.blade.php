@@ -16,23 +16,24 @@
         <div class="owl-rooms owl-theme">
 
             <!-- === rooms item === -->
-
+            @foreach ($rooms as $room)
+                
             <div class="item">
                 <article>
                     <div class="image">
-                        <img src="{{asset('assets/client/assets/images/room-1.jpg')}}" alt="" />
+                        <img src="{{asset($room->image)}}" alt="" />
                     </div>
                     <div class="details">
                         <div class="text">
-                            <h3 class="title"><a href="room-overview.html">Club Room</a></h3>
-                            <p>Single room</p>
+                            <h3 class="title"><a href="{{route('room.overview', [$room->slug, $room->id])}}">{{$room->room_code}}</a></h3>
+                            {{-- <p>Single room</p> --}}
                         </div>
                         <div class="book">
                             <div>
-                                <a href="room-overview.html" class="btn btn-main">Book now</a>
+                                <a href="{{route('room.overview', [$room->slug, $room->id])}}" class="btn btn-main">Book now</a>
                             </div>
                             <div>
-                                <span class="price h4">$ 98,00</span>
+                                <span class="price h4">{{ number_format($room->price, 0, '', '.') }}đ</span>
                                 <span>per night</span>
                             </div>
                         </div>
@@ -40,9 +41,12 @@
                 </article>
             </div>
 
+            @endforeach
+
+
             <!-- === rooms item === -->
 
-            <div class="item">
+            {{-- <div class="item">
                 <article>
                     <div class="image">
                         <img src="{{asset('assets/client/assets/images/room-2.jpg')}}" alt="" />
@@ -113,7 +117,7 @@
                         </div>
                     </div>
                 </article>
-            </div>
+            </div> --}}
 
         </div><!--/owl-rooms-->
 

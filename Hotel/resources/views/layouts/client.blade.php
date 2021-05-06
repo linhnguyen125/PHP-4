@@ -114,29 +114,15 @@
 
                         <ul class="navigation-left">
                             <li>
-                                <a href="index.html">Home <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
-                                <ul>
-                                    <li><a href="index.html">Home - Booking intro</a></li>
-                                    <li><a href="index-2.html">Home - Booking box</a></li>
-                                    <li><a href="index-3.html">Home - Rooms intro</a></li>
-                                </ul>
+                                <a href="{{url('/')}}">Home</a>
                             </li>
                             <li>
-                                <a href="#">Pages <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="#">Category <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="rooms-category.html">Rooms category</a></li>
-                                    <li><a href="room-overview.html">Room overview</a></li>
-                                    <li><a href="404.html">404 Not found</a></li>
-                                    <li><a href="shortcodes.html">Shortcodes</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Booking <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
-                                <ul>
-                                    <li><a href="reservation-1.html">Booking step 1</a></li>
-                                    <li><a href="reservation-2.html">Booking step 2</a></li>
-                                    <li><a href="reservation-3.html">Booking step 3</a></li>
+                                    @foreach ($categories as $category)
+                                    <li><a href="{{route('category.list', [$category->slug, $category->id])}}">{{$category->name}}</a></li>
+                                    @endforeach
+
                                 </ul>
                             </li>
                         </ul>

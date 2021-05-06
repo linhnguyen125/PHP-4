@@ -1,4 +1,4 @@
-<section class="quotes quotes-slider" style="background-image:url(assets/images/header-1.jpg)">
+<section class="quotes quotes-slider" style="background-image:url({{asset('assets/client/assets/images/header-1.jpg')}})">
     <div class="container">
 
         <!-- === Quotes header === -->

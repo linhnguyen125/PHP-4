@@ -24,4 +24,8 @@ class RoomRepository extends BaseRepository implements RoomRepositoryInterface
             return $result;
         }
     }
+
+    public function get($num){
+        return $this->model->take($num)->get();
+    }
 }

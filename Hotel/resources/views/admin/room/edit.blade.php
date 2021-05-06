@@ -24,7 +24,7 @@
                         </div><!-- .nk-block-between -->
                     </div><!-- .nk-block-head -->
                     
-                    <form action="{{route('room.store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('room.update', $room->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card card-preview">
                             <div class="card-inner">
@@ -34,7 +34,7 @@
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="form-group">
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-xl form-control-outlined" name="room_code" id="room_code" value="{{old('room_code')}}">
+                                                    <input type="text" class="form-control form-control-xl form-control-outlined" name="room_code" id="room_code" value="{{$room->room_code}}">
                                                     <label class="form-label-outlined" for="room_code">Mã phòng</label>
                                                 </div>
                                                 @error('room_code')
@@ -75,7 +75,7 @@
                                                 <div class="form-control-wrap">
                                                     <textarea name="detail" class="form-control form-control-xl"
                                                         id="detail" cols="30"
-                                                        rows="5">{{ old('detail') }}</textarea>
+                                                        rows="5">{{ $room->detail }}</textarea>
                                                     @error('detail')
                                                         <strong>
                                                             <small
@@ -90,7 +90,7 @@
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="form-group">
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-xl form-control-outlined" name="price" id="price" value="{{old('price')}}">
+                                                    <input type="text" class="form-control form-control-xl form-control-outlined" name="price" id="price" value="{{$room->price}}">
                                                     <label class="form-label-outlined" for="price">Giá phòng</label>
                                                 </div>
                                                 @error('price')
@@ -119,7 +119,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-primary"></em><span>Thêm mới</span></button>
+                                            <button type="submit" class="btn btn-primary"></em><span>Cập nhật</span></button>
                                         </div>
                                     </div>
                                     
@@ -127,8 +127,6 @@
                             </div>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>

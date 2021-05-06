@@ -35,7 +35,7 @@
 
     <!-- ========================  Subscribe ======================== -->
 
-    @include('shared.quotes')
+    @include('shared.subscribe')
 
     <!-- ================== Footer  ================== -->
 @endsection
