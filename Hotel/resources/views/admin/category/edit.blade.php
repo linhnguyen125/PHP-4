@@ -38,7 +38,11 @@
                                                     <label class="form-label-outlined" for="name">Tên danh mục</label>
                                                 </div>
                                                 @error('name')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>
@@ -50,7 +54,11 @@
                                                     <label class="form-label-outlined" for="description">Mô tả</label>
                                                 </div>
                                                 @error('description')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>

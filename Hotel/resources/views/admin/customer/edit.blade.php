@@ -34,11 +34,15 @@
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="form-group">
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg form-control-outlined" name="name" id="name" value="{{old('name')}}">
+                                                    <input type="text" class="form-control form-control-lg form-control-outlined" name="name" id="name" value="{{$user->name}}">
                                                     <label class="form-label-outlined" for="name">Tên nhân viên</label>
                                                 </div>
                                                 @error('name')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>
@@ -46,11 +50,15 @@
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="form-group">
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg form-control-outlined" name="phone" id="phone" value="{{old('phone')}}">
+                                                    <input type="text" class="form-control form-control-lg form-control-outlined" name="phone" id="phone" value="{{$user->phone}}">
                                                     <label class="form-label-outlined" for="phone">Số điện thoại</label>
                                                 </div>
                                                 @error('phone')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>
@@ -59,11 +67,15 @@
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="form-group">
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg form-control-outlined" name="address" id="address" value="{{old('address')}}">
+                                                    <input type="text" class="form-control form-control-lg form-control-outlined" name="address" id="address" value="{{$user->address}}">
                                                     <label class="form-label-outlined" for="address">Địa chỉ</label>
                                                 </div>
                                                 @error('address')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>
@@ -75,12 +87,16 @@
                                                         <em class="icon ni ni-calendar-alt"></em>
                                                     </div>
                                                     <input type="text" class="form-control form-control-lg form-control-outlined date-picker" 
-                                                    name="date_of_birth" id="outlined-date-picker" value="{{old('date_of_birth')}}"
+                                                    name="date_of_birth" id="outlined-date-picker" value="{{$user->date_of_birth}}"
                                                     data-date-format="yyyy-mm-dd">
                                                     <label class="form-label-outlined" for="outlined-date-picker">Ngày sinh</label>
                                                 </div>
                                                 @error('date_of_birth')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>

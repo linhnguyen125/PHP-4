@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Auth\AuthServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('client.home.index');
 });
+
 
 // =============== ADMIN ===========================
 Route::get('/admin', 'DashboardController@index');
@@ -40,6 +42,12 @@ Route::post('/admin/categories/store', 'CategoryController@store')->name('catego
 Route::get('/admin/categories/delete/{id}', 'CategoryController@delete')->name('category.delete');
 Route::get('/admin/categories/edit/{id}', 'CategoryController@edit')->name('category.edit');
 Route::post('/admin/categories/update/{id}', 'CategoryController@update')->name('category.update');
+
+
+//  ============== ROOM ===========================
+Route::get('/admin/rooms/index', 'RoomController@index')->name('room.index');
+Route::get('/admin/rooms/create', 'RoomController@create')->name('room.create');
+Route::post('/admin/rooms/store', 'RoomController@store')->name('room.store');
 
 
 Auth::routes();

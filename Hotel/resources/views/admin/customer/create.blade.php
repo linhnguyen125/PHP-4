@@ -38,7 +38,11 @@
                                                     <label class="form-label-outlined" for="name">Họ và tên</label>
                                                 </div>
                                                 @error('name')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>
@@ -50,7 +54,11 @@
                                                     <label class="form-label-outlined" for="email">Email</label>
                                                 </div>
                                                 @error('email')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>
@@ -62,7 +70,11 @@
                                                     <label class="form-label-outlined" for="password">Mật khẩu</label>
                                                 </div>
                                                 @error('password')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>
@@ -74,7 +86,11 @@
                                                     <label class="form-label-outlined" for="confirmPassword">Xác nhận mật khẩu</label>
                                                 </div>
                                                 @error('password')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>
@@ -86,7 +102,11 @@
                                                     <label class="form-label-outlined" for="phone">Số điện thoại</label>
                                                 </div>
                                                 @error('phone')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>
@@ -99,7 +119,11 @@
                                                     <label class="form-label-outlined" for="address">Địa chỉ</label>
                                                 </div>
                                                 @error('address')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>
@@ -116,7 +140,11 @@
                                                     <label class="form-label-outlined" for="outlined-date-picker">Ngày sinh</label>
                                                 </div>
                                                 @error('date_of_birth')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <strong>
+                                                            <small
+                                                                class="text-danger">{{ $message }}
+                                                            </small>
+                                                        </strong>
                                                 @enderror
                                             </div>
                                         </div>

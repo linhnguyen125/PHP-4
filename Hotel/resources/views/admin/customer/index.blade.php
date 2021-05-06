@@ -96,7 +96,16 @@
                                     <a href="{{route('customer.detail', $user->id)}}">
                                         <div class="user-card">
                                             <div class="user-avatar bg-primary">
-                                                <span>AB</span>
+                                                <span>
+                                                    @php
+                                                        $str_name = explode(' ', $user->name);
+                                                        if(count($str_name) > 1){
+                                                            echo strtoupper(reset($str_name)[0]) . strtoupper(end($str_name)[0]);
+                                                        }else{
+                                                            echo strtoupper(reset($str_name));
+                                                        }
+                                                    @endphp
+                                                </span>
                                             </div>
                                             <div class="user-info">
                                                 <span class="tb-lead">{{$user->name}} <span class="dot dot-success d-md-none ml-1"></span></span>

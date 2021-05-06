@@ -14,6 +14,92 @@
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('css/dashlite.css?ver=2.2.0') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('css/theme.css?ver=2.2.0') }}">
+    <!-- Tiny Mce -->
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/c2smjg6a8qpnm09rt8vnh82ycak6loc0rek9ik9f5s1a3kz5/tinymce/4/tinymce.min.js"
+        referrerpolicy="origin"></script>
+        <script type="text/javascript">
+            var editor_config = {
+                path_absolute: "http://localhost/PHP-4/Hotel/",
+                selector: "textarea",
+                height: 300,
+                plugins: [
+                    'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+                    'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                    'table emoticons template paste help'
+                ],
+                toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
+                    'bullist numlist outdent indent | link image | print preview media fullpage | ' +
+                    'forecolor backcolor emoticons | help',
+                menu: {
+                    favs: {
+                        title: 'My Favorites',
+                        items: 'code visualaid | searchreplace | emoticons'
+                    },
+                    file: {
+                        title: 'File',
+                        items: 'newdocument restoredraft | preview | print '
+                    },
+                    edit: {
+                        title: 'Edit',
+                        items: 'undo redo | cut copy paste | selectall | searchreplace'
+                    },
+                    view: {
+                        title: 'View',
+                        items: 'code | visualaid visualchars visualblocks | spellchecker | preview fullscreen'
+                    },
+                    insert: {
+                        title: 'Insert',
+                        items: 'image link media template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor toc | insertdatetime'
+                    },
+                    format: {
+                        title: 'Format',
+                        items: 'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align lineheight | forecolor backcolor | removeformat'
+                    },
+                    tools: {
+                        title: 'Tools',
+                        items: 'spellchecker spellcheckerlanguage | code wordcount'
+                    },
+                    table: {
+                        title: 'Table',
+                        items: 'inserttable | cell row column | tableprops deletetable'
+                    },
+                    help: {
+                        title: 'Help',
+                        items: 'help'
+                    }
+                },
+                menubar: 'favs file edit view insert format tools table help',
+                relative_urls: false,
+                file_browser_callback: function(field_name, url, type, win) {
+                    var x = window.innerWidth || document.documentElement.clientWidth || document
+                        .getElementsByTagName('body')[0].clientWidth;
+                    var y = window.innerHeight || document.documentElement.clientHeight || document
+                        .getElementsByTagName('body')[0].clientHeight;
+    
+                    var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' +
+                        field_name;
+                    if (type == 'image') {
+                        cmsURL = cmsURL + "&type=Images";
+                    } else {
+                        cmsURL = cmsURL + "&type=Files";
+                    }
+    
+                    tinyMCE.activeEditor.windowManager.open({
+                        file: cmsURL,
+                        title: 'Filemanager',
+                        width: x * 0.8,
+                        height: y * 0.8,
+                        resizable: "yes",
+                        close_previous: "no"
+                    });
+                }
+    
+            };
+    
+            tinymce.init(editor_config);
+    
+        </script>
 </head>
 
 <body class="nk-body bg-lighter npc-general has-sidebar ">
@@ -58,7 +144,7 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="html/ecommerce/products.html" class="nk-menu-link">
+                                    <a href="{{route('room.index')}}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-home-fill"></em></em></span>
                                         <span class="nk-menu-text">Phòng</span>
                                     </a>
@@ -304,7 +390,16 @@
                                             <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                                 <div class="user-card">
                                                     <div class="user-avatar">
-                                                        <span>AB</span>
+                                                        <span>
+                                                            @php
+                                                                $str_name = explode(' ', Auth::user()->name);
+                                                                if(count($str_name) > 1){
+                                                                    echo strtoupper(reset($str_name)[0]) . strtoupper(end($str_name)[0]);
+                                                                }else{
+                                                                    echo strtoupper(reset($str_name));
+                                                                }
+                                                            @endphp
+                                                        </span>
                                                     </div>
                                                     <div class="user-info">
                                                         <span class="lead-text">{{Auth::user()->name}}</span>
@@ -314,15 +409,24 @@
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="html/ecommerce/user-profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                    <li><a href="html/ecommerce/user-profile.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                    <li><a href="html/ecommerce/user-profile.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                                    <li><a href="{{route('customer.detail', Auth::user()->id)}}"><em class="icon ni ni-user-alt"></em><span>Xem thông tin</span></a></li>
+                                                    <li><a href="html/ecommerce/user-profile.html"><em class="icon ni ni-setting-alt"></em><span>Cài đặt tài khoản</span></a></li>
+                                                    <li><a href="html/ecommerce/user-profile.html"><em class="icon ni ni-activity-alt"></em><span>Hoạt động</span></a></li>
                                                     <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
                                                 </ul>
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                    <li>
+                                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                                            <em class="icon ni ni-signout"></em>
+                                                            <span>Đăng xuất</span>
+                                                        </a>
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                            @csrf
+                                                        </form>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
