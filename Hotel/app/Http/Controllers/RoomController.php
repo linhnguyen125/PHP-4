@@ -16,6 +16,12 @@ class RoomController extends Controller
 
     public function __construct(RoomRepositoryInterface $roomRepo){
         $this->roomRepo = $roomRepo;
+
+        $this->middleware(function ($request, $next) {
+            session(['module_active' => 'room']);
+
+            return $next($request);
+        });
     }
 
     public function index(){

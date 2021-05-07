@@ -13,6 +13,12 @@ class CategoryController extends Controller
 
     public function __construct(CategoryRepositoryInterface $catRepo){
         $this->catRepo = $catRepo;
+
+        $this->middleware(function ($request, $next) {
+            session(['module_active' => 'category']);
+
+            return $next($request);
+        });
     }
 
     public function index(){

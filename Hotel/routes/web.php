@@ -69,7 +69,8 @@ Route::get('/room-overview/{slug}_{id}.html', 'SiteController@overview')->name('
 Route::get('/danh-muc/{slug}_{id}.html', 'SiteController@showCategory')->name('category.list');
 
 // ------------ Đặt phòng --------------------------
-Route::post('/booking/{id}', 'BookingController@booking')->name('booking');
+Route::get('/booking/{id}', 'BookingController@booking')->name('booking');
+Route::post('/checkout/{id}', 'BookingController@checkout')->name('checkout');
 
 Auth::routes();
 

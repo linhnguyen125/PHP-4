@@ -43,7 +43,7 @@
         </div> <!--/room-gallery-->
         <!-- === Booking === -->
 
-        <form id="booking-form" action="{{route('booking', $room->id)}}" method="POST">
+        <form id="booking-form" action="{{route('booking', $room->id)}}" method="GET">
             @csrf
             <div class="booking booking-inner">
 
@@ -93,11 +93,11 @@
                                             <!--=== Adults value ===-->
 
                                             <div>
-                                                <input class="qty-amount" value="2" type="text" id="ticket-adult" data-value="2" readonly="readonly" />
+                                                <input class="qty-amount" name="adults" value="2" type="text" id="ticket-adult" data-value="2" readonly="readonly" />
                                             </div>
 
                                             <div>
-                                                <span>Adults <small>16+ years</small></span>
+                                                <span>Người lớn <small>16+ years</small></span>
                                             </div>
 
                                             <!--=== Add/remove quantity buttons ===-->
@@ -109,20 +109,20 @@
 
                                         </li>
 
-                                        <!--=== chilrens ===-->
+                                        <!--=== children ===-->
 
                                         <li class="clearfix">
 
                                             <!--=== Adults value ===-->
 
                                             <div>
-                                                <input class="qty-amount" value="0" type="text" id="ticket-children" data-value="0" readonly="readonly" />
+                                                <input class="qty-amount" name="children" value="0" type="text" id="ticket-children" data-value="0" readonly="readonly" />
                                             </div>
 
                                             <!--=== Label ===-->
 
                                             <div>
-                                                <span>Children <small>2-11 years</small></span>
+                                                <span>Trẻ em <small>2-11 years</small></span>
                                             </div>
 
 
@@ -142,13 +142,13 @@
                                             <!--=== Adults value ===-->
 
                                             <div>
-                                                <input class="qty-amount" value="0" type="text" id="ticket-infants" data-value="0" readonly="readonly" />
+                                                <input class="qty-amount" name="infants" value="0" type="text" id="ticket-infants" data-value="0" readonly="readonly" />
                                             </div>
 
                                             <!--=== Label ===-->
 
                                             <div>
-                                                <span>Infants <small>Under 2 years</small></span>
+                                                <span>Trẻ sơ sinh <small>Under 2 years</small></span>
                                             </div>
 
                                             <!--=== Add/remove quantity buttons ===-->

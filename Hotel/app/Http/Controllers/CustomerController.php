@@ -15,6 +15,12 @@ class CustomerController extends Controller
     public function __construct(UserRepositoryInterface $userRepo)
     {
         $this->userRepo = $userRepo;
+
+        $this->middleware(function ($request, $next) {
+            session(['module_active' => 'customer']);
+
+            return $next($request);
+        });
     }
 
     public function index(){
