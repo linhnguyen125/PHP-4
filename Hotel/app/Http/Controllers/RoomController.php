@@ -33,7 +33,7 @@ class RoomController extends Controller
         $request->validate(
             [
                 'room_code' => 'required|string|max:255',
-                'cat_id' => ['required'],
+                'category_id' => ['required'],
                 'image' => ['required', 'image'],
                 'detail' => ['required'],
                 'price' => ['required', 'integer'],
@@ -46,7 +46,7 @@ class RoomController extends Controller
             ],
             [
                 'room_code' => 'Mã phòng',
-                'cat_id' => 'Danh mục',
+                'category_id' => 'Danh mục',
                 'image' => 'Hình ảnh',
                 'detail' => 'Chi tiết',
                 'price' => 'Giá phòng',
@@ -62,7 +62,7 @@ class RoomController extends Controller
             Room::create([
                 'room_code' => $request->input('room_code'),
                 'slug' => SlugService::createSlug(Room::class, 'slug', $request->room_code),
-                'cat_id' => $request->input('cat_id'),
+                'category_id' => $request->input('category_id'),
                 'price' => $request->input('price'),
                 'image' => $path,
                 'detail' => $request->input('detail'),
@@ -103,7 +103,7 @@ class RoomController extends Controller
             $request->validate(
                 [
                     'room_code' => 'required|string|max:255',
-                    'cat_id' => ['required'],
+                    'category_id' => ['required'],
                     'image' => ['required', 'image'],
                     'detail' => ['required'],
                     'price' => ['required', 'integer'],
@@ -116,7 +116,7 @@ class RoomController extends Controller
                 ],
                 [
                     'room_code' => 'Mã phòng',
-                    'cat_id' => 'Danh mục',
+                    'category_id' => 'Danh mục',
                     'image' => 'Hình ảnh',
                     'detail' => 'Chi tiết',
                     'price' => 'Giá phòng',
@@ -139,7 +139,7 @@ class RoomController extends Controller
             Room::where('id', $id)->update([
                 'room_code' => $request->input('room_code'),
                 'slug' => SlugService::createSlug(Room::class, 'slug', $request->room_code),
-                'cat_id' => $request->input('cat_id'),
+                'category_id' => $request->input('category_id'),
                 'price' => $request->input('price'),
                 'image' => $path,
                 'detail' => $request->input('detail'),
@@ -151,7 +151,7 @@ class RoomController extends Controller
             $request->validate(
                 [
                     'room_code' => 'required|string|max:255',
-                    'cat_id' => ['required'],
+                    'category_id' => ['required'],
                     'detail' => ['required'],
                     'price' => ['required', 'integer'],
                 ],
@@ -162,7 +162,7 @@ class RoomController extends Controller
                 ],
                 [
                     'room_code' => 'Mã phòng',
-                    'cat_id' => 'Danh mục',
+                    'category_id' => 'Danh mục',
                     'detail' => 'Chi tiết',
                     'price' => 'Giá phòng',
                 ]
@@ -171,7 +171,7 @@ class RoomController extends Controller
             Room::where('id', $id)->update([
                 'room_code' => $request->input('room_code'),
                 'slug' => SlugService::createSlug(Room::class, 'slug', $request->room_code),
-                'cat_id' => $request->input('cat_id'),
+                'category_id' => $request->input('category_id'),
                 'price' => $request->input('price'),
                 'detail' => $request->input('detail'),
             ]);

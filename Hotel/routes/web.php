@@ -61,9 +61,15 @@ Route::post('/admin/rooms/update/{id}', 'RoomController@update')->name('room.upd
 
 // =============== SITE ============================
 Route::get('/', 'SiteController@index')->name('site.index');
-Route::get('/room-overview/{slug}/{id}.html', 'SiteController@overview')->name('room.overview');
-Route::get('/danh-muc/{slug}/{id}.html', 'SiteController@category')->name('category.list');
 
+// ------------ Chi tiết phòng ---------------------
+Route::get('/room-overview/{slug}_{id}.html', 'SiteController@overview')->name('room.overview');
+
+// ------------ Danh mục phòng --------------------- 
+Route::get('/danh-muc/{slug}_{id}.html', 'SiteController@showCategory')->name('category.list');
+
+// ------------ Đặt phòng --------------------------
+Route::post('/booking/{id}', 'BookingController@booking')->name('booking');
 
 Auth::routes();
 

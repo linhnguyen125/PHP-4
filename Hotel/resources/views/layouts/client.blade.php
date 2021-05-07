@@ -120,7 +120,7 @@
                                 <a href="#">Category <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
                                     @foreach ($categories as $category)
-                                    <li><a href="{{route('category.list', [$category->slug, $category->id])}}">{{$category->name}}</a></li>
+                                    <li><a href="{{route('category.list', [$category->slug, $category->id] )}}">{{$category->name}}</a></li>
                                     @endforeach
 
                                 </ul>

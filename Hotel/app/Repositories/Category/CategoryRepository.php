@@ -14,4 +14,6 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryInt
     public function getAll(){
         return $this->model->paginate(10);
     }
+
+    
 }

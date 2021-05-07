@@ -393,7 +393,8 @@
     // ------------------------------------------------------
 
     // Default calendar namespaces
-    var dateFormat = "<span class='day'>d</span> <span class='month'>M</span> <span class='year'>yy</span>",
+    // var dateFormat = $('#datepicker').datepicker({ dateFormat: 'dd-mm-Y' }).val(),
+    var dateFormat = "<span class='day'>d</span> <span class='month'>m</span> <span class='year'>yy</span>",
         dateArrival = '#dateArrival input',
         dateDeparture = '#dateDeparture input',
         dateArrivalVal = '#dateArrival .date-value',

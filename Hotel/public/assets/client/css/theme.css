@@ -3267,6 +3267,7 @@ section {
   }
   .booking .booking-wrapper .date .month {
     display: inline-block;
+    font-size: 30px;
   }
   .booking .booking-wrapper .guests .qty-result {
     height: 80px;

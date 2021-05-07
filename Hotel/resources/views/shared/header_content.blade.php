@@ -22,9 +22,9 @@
                     <div class="desc animated" data-animation="fadeInUp">
                         and unforgettable weddings.
                     </div>
-                    <div class="animated" data-animation="fadeInUp">
+                    {{-- <div class="animated" data-animation="fadeInUp">
                         <a href="https://themeforest.net/item/colina-hotel-website-template/20977257" class="btn btn-clean">Buy this template</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

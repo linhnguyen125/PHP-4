@@ -99,7 +99,7 @@
     
             tinymce.init(editor_config);
     
-        </script>
+    </script>
 </head>
 
 <body class="nk-body bg-lighter npc-general has-sidebar ">
@@ -126,7 +126,7 @@
                         <div class="nk-sidebar-menu" data-simplebar>
                             <ul class="nk-menu">
                                 <li class="nk-menu-item">
-                                    <a href="{{url('admin')}}" class="nk-menu-link">
+                                    <a href="{{url('/admin')}}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
                                         <span class="nk-menu-text">Dashboard</span>
                                     </a>

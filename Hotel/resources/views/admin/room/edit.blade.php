@@ -52,16 +52,16 @@
                                             <div class="form-group">
                                                 <div class="form-control-wrap">
                                                     <select class="form-select form-control form-control-xl"
-                                                        data-ui="xl" name="cat_id" id="outlined-select" required>
+                                                        data-ui="xl" name="category_id" id="outlined-select" required>
                                                         @foreach ($list_cats as $cat)
-                                                            <option value="{{ $cat->id }}">
+                                                            <option value="{{ $cat->id }}" {{$room->category_id == $cat->id ? "selected":" "}}>
                                                                 {{ $cat->name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
                                                     <label class="form-label-outlined"
                                                         for="outlined-select">Danh mục</label>
-                                                    @error('cat_id')
+                                                    @error('category_id')
                                                         <strong><small
                                                                 class="text-danger">{{ $message }}</small></strong>
                                                     @enderror
