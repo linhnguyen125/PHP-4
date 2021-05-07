@@ -54,6 +54,12 @@ Route::get('/admin/rooms/edit/{id}.html', 'RoomController@edit')->name('room.edi
 Route::post('/admin/rooms/update/{id}', 'RoomController@update')->name('room.update');
 
 
+//  ============== ORDER ===========================
+Route::get('/admin/orders/index.html', 'OrderController@index')->name('order.index');
+Route::get('/admin/orders/detail/{id}.html', 'OrderController@detail')->name('order.detail');
+Route::get('/admin/orders/delete/{id}', 'OrderController@delete')->name('order.delete');
+
+
 // =================================================
 // =============== CLIENT ==========================
 // =================================================

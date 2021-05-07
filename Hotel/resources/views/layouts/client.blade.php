@@ -74,18 +74,32 @@
                     <!-- navigation-top-right -->
 
                     <div class="navigation-top-right">
-                        <a class="box" href="#">
-                            <i class="icon icon-star"></i> 
-                            Special offers
-                        </a>
-                        <a class="box" href="reservation-1.html">
-                            <i class="icon icon-tag"></i> 
-                            Reservations
-                        </a>
-                        <a class="box" href="#">
-                            <i class="icon icon-phone-handset"></i> 
-                            (01) 252-3333
-                        </a>
+
+                        @if (Route::has('login'))
+                            @auth
+                            <a class="box" href="{{url('/home')}}">
+                                {{Auth::user()->name}}
+                            </a>
+                            <a class="box" href="#" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                            @else
+                                <a class="box" href="{{ route('login') }}">
+                                    Login
+                                </a>
+
+                                @if (Route::has('register'))
+                                    <a class="box" href="{{ route('register') }}">
+                                        Register
+                                    </a>
+                                @endif
+                            @endauth
+                        @endif
+
                     </div>
                 </nav>
 

@@ -23,7 +23,7 @@
                         </a>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item {{ session('module_active') == 'order' ? 'active current-page' : '' }}">
-                        <a href="html/ecommerce/orders.html" class="nk-menu-link">
+                        <a href="{{route('order.index')}}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-bag-fill"></em></span>
                             <span class="nk-menu-text">Hóa đơn</span>
                         </a>

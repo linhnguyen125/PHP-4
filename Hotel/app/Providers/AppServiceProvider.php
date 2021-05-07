@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -29,6 +31,11 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Room\RoomRepositoryInterface::class,
             \App\Repositories\Room\RoomRepository::class
         );
+
+        $this->app->singleton(
+            \App\Repositories\Order\OrderRepositoryInterface::class,
+            \App\Repositories\Order\OrderRepository::class
+        );
     }
 
     /**
@@ -40,5 +47,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(255);
+
+        // truyền dữ liệu qua tất cả các view
+        $categories = Category::select('name', 'slug', 'id')->get();
+        View::share('categories', $categories);
     }
 }
