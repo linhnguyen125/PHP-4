@@ -26,7 +26,7 @@ class RoomRepository extends BaseRepository implements RoomRepositoryInterface
     }
 
     public function get($num){
-        return $this->model->orderBy('price', 'desc')->take($num)->get();
+        return $this->model->where('status', '1')->orderBy('price', 'desc')->take($num)->get();
     }
 
     public function getByCatID($id){

@@ -107,6 +107,9 @@ class BookingController extends Controller
                 'email' => $request->input('email'),
             ]);
 
+            // set status = 0 cho room (room đã được đặt)
+            $this->roomRepo->updateStatus($id, '0');
+
             return back()->with('success', 'Quý khách đã đặt phòng thành công. Thông tin chi tiết đã được gửi tới email của bạn');
         }else{
             return back()->with('error', 'Có lỗi xảy ra vui lòng thử lại');

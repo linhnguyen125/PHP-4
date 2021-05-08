@@ -128,10 +128,10 @@
 
                         <ul class="navigation-left">
                             <li>
-                                <a href="{{url('/')}}">Home</a>
+                                <a href="{{url('/')}}">Trang chủ</a>
                             </li>
                             <li>
-                                <a href="#">Category <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="#">Loại phòng <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <ul>
                                     @foreach ($categories as $category)
                                     <li><a href="{{route('category.list', [$category->slug, $category->id] )}}">{{$category->name}}</a></li>

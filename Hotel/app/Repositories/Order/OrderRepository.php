@@ -28,4 +28,8 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
     public function get($num){
         return $this->model->orderBy('price', 'desc')->take($num)->get();
     }
+
+    public function getAllByStatus($status){
+        return $this->model->where('status', $status)->paginate(10);
+    }
 }

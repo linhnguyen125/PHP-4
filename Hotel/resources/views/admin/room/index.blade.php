@@ -101,7 +101,11 @@
                                 </span>
                             </div>
                             <div class="nk-tb-col">
-                                <span class="tb-sub">{{$room->status == '1' ? "Trống" : "Đã đặt"}}</span>
+                                @if ($room->status == '1')
+                                    <span class="tb-sub text-success">Trống</span>
+                                @else
+                                    <span class="tb-sub text-danger">Đã đặt</span>
+                                @endif
                             </div>
                             <div class="nk-tb-col">
                                 <span class="tb-lead">{{ number_format($room->price, 0, '', '.') }} 

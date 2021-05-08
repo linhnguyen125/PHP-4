@@ -21,9 +21,10 @@ use Illuminate\Support\Facades\Route;
 // =================================================
 
 
-Route::get('/admin', 'DashboardController@index');
-Route::get('/dashboard', 'DashboardController@index');
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', 'DashboardController@index');
+    Route::get('/dashboard', 'DashboardController@index');
+});
 
 //  ============== CUSTOMERS ===========================
 Route::get('/admin/customers/index.html', 'CustomerController@index')->name('customer.index');
@@ -58,6 +59,7 @@ Route::post('/admin/rooms/update/{id}', 'RoomController@update')->name('room.upd
 Route::get('/admin/orders/index.html', 'OrderController@index')->name('order.index');
 Route::get('/admin/orders/detail/{id}.html', 'OrderController@detail')->name('order.detail');
 Route::get('/admin/orders/delete/{id}', 'OrderController@delete')->name('order.delete');
+Route::get('/admin/orders/finish/{id}', 'OrderController@finish')->name('order.finish');
 
 
 // =================================================
@@ -75,8 +77,11 @@ Route::get('/room-overview/{slug}_{id}.html', 'SiteController@overview')->name('
 Route::get('/danh-muc/{slug}_{id}.html', 'SiteController@showCategory')->name('category.list');
 
 // ------------ Đặt phòng --------------------------
-Route::get('/booking/{id}', 'BookingController@booking')->name('booking');
-Route::post('/checkout/{id}', 'BookingController@checkout')->name('checkout');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/booking/{id}', 'BookingController@booking')->name('booking');
+    Route::post('/checkout/{id}', 'BookingController@checkout')->name('checkout');
+});
+
 
 Auth::routes();
 

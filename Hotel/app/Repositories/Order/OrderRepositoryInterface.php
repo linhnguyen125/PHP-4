@@ -10,4 +10,5 @@ interface OrderRepositoryInterface
     public function update($id, $attributes = []);
     public function updateStatus($id, $status);
     public function get($num);
+    public function getAllByStatus($status);
 }

@@ -120,6 +120,7 @@
                                                     {{-- <li><a href="{{route('order.edit', $order->id)}}"><em class="icon ni ni-edit"></em><span>Chỉnh sửa</span></a></li> --}}
                                                     <li><a href="{{route('order.detail', $order->id)}}"><em class="icon ni ni-eye"></em><span>Xem chi tiết</span></a></li>
                                                     <li><a href="{{route('order.delete', $order->id)}}"><em class="icon ni ni-trash"></em><span>Xóa hóa đơn</span></a></li>
+                                                    <li><a href="{{route('order.finish', $order->id)}}"><em class="icon ni ni-done"></em><span>Trả phòng</span></a></li>
                                                 </ul>
                                             </div>
                                         </div>
