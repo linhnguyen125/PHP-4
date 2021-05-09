@@ -32,4 +32,8 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
     public function getAllByStatus($status){
         return $this->model->where('status', $status)->paginate(10);
     }
+
+    public function getAllByKeyword($keyword){
+        return $this->model->where('bill_code', 'like', '%'.$keyword.'%')->paginate(10);
+    }
 }

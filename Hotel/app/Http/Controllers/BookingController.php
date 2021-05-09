@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BookingMail;
 use App\Models\Bill;
 use App\Models\BillDetail;
 use App\Models\Category;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Repositories\Room\RoomRepositoryInterface;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class BookingController extends Controller
@@ -110,10 +112,23 @@ class BookingController extends Controller
             // set status = 0 cho room (room đã được đặt)
             $this->roomRepo->updateStatus($id, '0');
 
+            // gửi mail
+            $email = $request->input('email');
+            $data = [
+                'name' => $request->input('name'),
+                'dateArrival' => $request->input('dateArrival'),
+                'night' => $request->input('night'),
+            ];
+            $this->sendMail($data, $email);
+
             return back()->with('success', 'Quý khách đã đặt phòng thành công. Thông tin chi tiết đã được gửi tới email của bạn');
         }else{
             return back()->with('error', 'Có lỗi xảy ra vui lòng thử lại');
         }
 
+    }
+
+    public function sendMail($data = [], $email){
+        Mail::to($email)->send(new BookingMail($data));
     }
 }

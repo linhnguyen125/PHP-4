@@ -30,17 +30,18 @@
                                                 <div class="form-icon form-icon-right">
                                                     <em class="icon ni ni-search"></em>
                                                 </div>
-                                                <input type="text" class="form-control" id="default-04" placeholder="Quick search by id">
+                                                <form action="">
+                                                    <input type="text" name="keyword" class="form-control" id="default-04" placeholder="Quick search by id">
+                                                </form>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="drodown">
-                                                <a href="#" class="dropdown-toggle dropdown-indicator btn btn-outline-light btn-white" data-toggle="dropdown">Status</a>
+                                                <a href="#" class="dropdown-toggle dropdown-indicator btn btn-outline-light btn-white" data-toggle="dropdown">Trạng thái</a>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <ul class="link-list-opt no-bdr">
-                                                        <li><a href="#"><span>New Items</span></a></li>
-                                                        <li><a href="#"><span>Featured</span></a></li>
-                                                        <li><a href="#"><span>Out of Stock</span></a></li>
+                                                        <li><a href="{{request()->fullUrlWithQuery(['status' => 'dang-su-dung'])}}"><span>Đang sử dụng</span></a></li>
+                                                        <li><a href="{{request()->fullUrlWithQuery(['status' => 'hoan-thanh'])}}"><span>Hoàn thành</span></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -103,7 +104,12 @@
                             </div>
                             
                             <div class="nk-tb-col">
-                                <span class="tb-sub">{{$order->status == '1' ? "Đang sử dụng" : "Hoàn thành"}}</span>
+                                @if ($order->status == '1')
+                                <span class="tb-sub text-danger">Đang sử dụng</span>
+                                @else
+                                <span class="tb-sub text-success">Hoàn thành</span>
+                                @endif
+                                
                             </div>
                             <div class="nk-tb-col">
                                 <span class="tb-lead">{{ number_format($order->total, 0, '', '.') }}

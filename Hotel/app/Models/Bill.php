@@ -9,7 +9,7 @@ class Bill extends Model
     //
     protected $table = 'bills';
 
-    protected $fillable = ['bill_code', 'user_id', 'night', 'total'];
+    protected $fillable = ['bill_code', 'user_id', 'night', 'total', 'status'];
 
     public function user(){
         return $this->belongsTo('App\Models\User');

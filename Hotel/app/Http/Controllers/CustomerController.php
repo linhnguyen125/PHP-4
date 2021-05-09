@@ -123,6 +123,7 @@ class CustomerController extends Controller
             'phone' => $phone,
             'address' => $address,
             'date_of_birth' => $date_of_birth,
+            'status' => '1',
         ]);
 
         if($user){

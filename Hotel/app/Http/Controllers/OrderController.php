@@ -25,8 +25,17 @@ class OrderController extends Controller
         });
     }
 
-    public function index(){
-        $orders = $this->orderRepo->getAllByStatus('1');
+    public function index(Request $request){
+        if (strpos($request->status, 'dang-su-dung') !== false) {
+            $orders = $this->orderRepo->getAllByStatus('1');
+        }else if(strpos($request->status, 'hoan-thanh') !== false){
+            $orders = $this->orderRepo->getAllByStatus('0');
+        }else if($request->keyword){
+            $orders = $this->orderRepo->getAllByKeyword($request->keyword);
+        }else{
+            $orders = $this->orderRepo->getAll();
+        }
+        
         return view('admin.order.index', compact('orders'));
     }
 
