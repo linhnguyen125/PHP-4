@@ -21,6 +21,10 @@ class CreateBillDetails extends Migration
             $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
             $table->date('dateArrival');
             $table->date('dateDeparture');
+            $table->string('name');
+            $table->string('phone');
+            $table->string('address');
+            $table->string('email');
             $table->timestamps();
         });
     }

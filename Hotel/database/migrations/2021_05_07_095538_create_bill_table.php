@@ -18,8 +18,9 @@ class CreateBillTable extends Migration
             $table->string('bill_code')->unique();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('num');
+            $table->integer('night');
             $table->bigInteger('total');
+            $table->enum('status', [0, 1])->default(1);
             $table->timestamps();
         });
     }
